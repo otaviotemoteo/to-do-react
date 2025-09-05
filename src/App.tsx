@@ -5,6 +5,8 @@ import Spinner from "./assets/icons/spinner.svg?react";
 import Badge from "./components/badge";
 import Button from "./components/button";
 import ButtonIcon from "./components/button-icon";
+import InputText from "./components/input-text";
+import InputCheckbox from "./components/input-checkbox";
 
 function App() {
   return (
@@ -32,6 +34,14 @@ function App() {
           <ButtonIcon icon={TrashIcon} />
           <ButtonIcon icon={TrashIcon} variant={"secondary"} />
           <ButtonIcon icon={TrashIcon} variant={"tertiary"} />
+        </div>
+
+        <div>
+          <InputText/>
+        </div>
+
+        <div>
+          <InputCheckbox/>
         </div>
       </div>
     </>
