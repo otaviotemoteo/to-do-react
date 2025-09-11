@@ -18,6 +18,10 @@ export default function TaskItem() {
         setEditing(true)
     }
 
+    function HandleExitEditTask() {
+        setEditing(false)
+    }
+
 
 
     return (
@@ -35,8 +39,8 @@ export default function TaskItem() {
         <>
         <InputText className="flex-1" />
         <div className="flex gap-1">
-            <ButtonIcon icon={XIcon} variant="secondary"/>
-            <ButtonIcon icon={CheckIcon} variant="primary"  onClick={HandleEditTask}/>
+            <ButtonIcon icon={XIcon} variant="secondary" onClick={HandleExitEditTask}/>
+            <ButtonIcon icon={CheckIcon} variant="primary"/>
         </div>
         </>
         )}
