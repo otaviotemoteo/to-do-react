@@ -1,9 +1,15 @@
 import ButtonIcon from "../components/button-icon";
 import PlusIcon from "../assets/icons/plus.svg?react"
 import TaskItem from "./task-item";
+import useTasks from "../hooks/use-tasks";
 
 export default function TasksList() {
-    return <>
+    const {tasks} = useTasks();
+
+    console.log(tasks);
+
+    return (
+    <>
     <section>
         <ButtonIcon icon={PlusIcon}>Nova tarefa</ButtonIcon>
     </section>
@@ -14,4 +20,5 @@ export default function TasksList() {
         <TaskItem />
     </section>
     </>
+    )
 }
