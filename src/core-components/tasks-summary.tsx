@@ -3,7 +3,7 @@ import Badge from "../components/badge";
 import useTasks from "../hooks/use-tasks";
 
 export default function TasksSumary() {
-  const { tasksCount, concludedTasksCount } = useTasks();
+  const { tasksCount, concludedTasksCount, isLoadingTasks } = useTasks();
 
   return (
     <>
@@ -11,13 +11,15 @@ export default function TasksSumary() {
         <Text variant="body-sm-bold" className="!text-gray-300">
           Tarefas criadas
         </Text>
-        <Badge variant="primary">{tasksCount}</Badge>
+        <Badge variant="secondary" loading={isLoadingTasks}>
+          {tasksCount}
+        </Badge>
       </div>
       <div className="flex items-center gap-2">
         <Text variant="body-sm-bold" className="!text-gray-300">
           Concluídas
         </Text>
-        <Badge variant="secondary">
+        <Badge variant="secondary" loading={isLoadingTasks}>
           {concludedTasksCount} de {tasksCount}
         </Badge>
       </div>

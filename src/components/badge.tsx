@@ -1,6 +1,5 @@
-import React from "react";
-import Text from "./text";
 import { cva, cx, type VariantProps } from "class-variance-authority";
+import Text from "./text";
 import Skeleton from "./skeleton";
 
 export const badgeVariants = cva(
@@ -42,10 +41,10 @@ interface BadgeProps
   loading?: boolean;
 }
 
-export const BadgeSkeletonVariants = cva("", {
+export const badgeSkeletonVariants = cva("", {
   variants: {
     size: {
-      sm: "h-6 w-6",
+      sm: "w-6 h-6",
     },
   },
   defaultVariants: {
@@ -67,12 +66,13 @@ export default function Badge({
         rounded="full"
         className={cx(
           badgeVariants({ variant: "none" }),
-          BadgeSkeletonVariants({ size }),
+          badgeSkeletonVariants({ size }),
           className
         )}
       />
     );
   }
+
   return (
     <div className={badgeVariants({ variant, size, className })} {...props}>
       <Text variant="body-sm-bold" className={badgeTextVariants({ variant })}>
